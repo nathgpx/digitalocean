@@ -3,39 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Diagnóstico Médico</title>
+    <title>Diagnóstico Médico</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Diagnóstico Médico</h1>
-        <form id="medicalForm">
-            <label for="name">Nome do paciente:</label>
-            <input type="text" id="name" name="name" required>
+    <h1>Diagnóstico Médico Rápido</h1>
+    <form id="medicalForm">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" required><br>
 
-            <label for="age">Idade do paciente:</label>
-            <input type="number" id="age" name="age" required>
+        <label for="age">Idade:</label>
+        <input type="number" id="age" required><br>
 
-            <label for="gender">Gênero do paciente:</label>
-            <select id="gender" name="gender" required>
-                <option value="M">Masculino</option>
-                <option value="F">Feminino</option>
-            </select>
+        <label for="gender">Sexo:</label>
+        <select id="gender">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+        </select><br>
 
-            <label for="contact">Contato do paciente:</label>
-            <input type="text" id="contact" name="contact" required>
+        <label for="contact">Contato:</label>
+        <input type="text" id="contact"><br>
 
-            <label for="symptoms">Sintomas do paciente:</label>
-            <input type="text" id="symptoms" name="symptoms" placeholder="Exemplo: febre, tosse" required>
+        <label for="symptoms">Sintomas (separados por vírgula):</label>
+        <input type="text" id="symptoms" required><br>
 
-            <label for="observations">Observações:</label>
-            <textarea id="observations" name="observations" placeholder="Adicione observações (opcional)"></textarea>
+        <label for="observations">Observações:</label>
+        <textarea id="observations"></textarea><br>
 
-            <button type="submit">Criar Prontuário Médico</button>
-        </form>
+        <button type="submit">Diagnosticar</button>
+    </form>
 
-        <div id="result"></div>
-    </div>
+    <div id="result" style="display: none;"></div>
 
     <script src="script.js"></script>
 </body>
