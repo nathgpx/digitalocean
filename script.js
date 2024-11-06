@@ -37,4 +37,10 @@ document.getElementById("medicalForm").addEventListener("submit", async function
     }
 
     document.getElementById("result").style.display = "block";
+
+"scripts": {
+  "start": "script.js"
+}
+
+    
 });
