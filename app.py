@@ -75,14 +75,12 @@ def predict_disease(symptom_list):
 
 @app.route("/diagnose", methods=["POST"])
 def diagnose():
-    data = request.get_json()
-
-    name = data.get("name")
-    age = data.get("age")
-    gender = data.get("gender")
-    contact = data.get("contact")
-    symptoms_input = data.get("symptoms")
-    observations = data.get("observations")
+    name = request.form.get("name")
+    age = request.form.get("age")
+    gender = request.form.get("gender")
+    contact = request.form.get("contact")
+    symptoms_input = request.form.getlist("symptoms")  # Aqui pegamos a lista de sintomas selecionados
+    observations = request.form.get("observations")
 
     # Prevendo a doença
     disease, confidence = predict_disease(symptoms_input)
@@ -99,3 +97,5 @@ def index():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
